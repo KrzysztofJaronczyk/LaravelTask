@@ -19,6 +19,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $this->app->make(\Illuminate\Contracts\Auth\Access\Gate::class)->resource('customers', \App\Policies\CustomerPolicy::class);
     }
 }
